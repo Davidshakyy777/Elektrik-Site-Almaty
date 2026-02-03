@@ -1,18 +1,15 @@
+// Chat батырмасы
 const chat = document.querySelector('.chat');
 const menu = document.querySelector('.chat-menu');
 
-// Чатты басқанда ашу / жабу
 chat.addEventListener('click', (e) => {
-  e.stopPropagation(); // click жоғарыға өтпесін
+  e.stopPropagation();
   menu.classList.toggle('show');
 });
 
-// Чат менюін басқанда жабылмасын
-menu.addEventListener('click', (e) => {
-  e.stopPropagation();
-});
-
-// Беттiң басқа жерiн басқанда жабу
-document.addEventListener('click', () => {
-  menu.classList.remove('show');
+// Chat-тан тыс жерді басқанда жабу
+document.addEventListener('click', (e) => {
+  if (!chat.contains(e.target)) {
+    menu.classList.remove('show');
+  }
 });

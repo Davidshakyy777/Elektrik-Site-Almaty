@@ -13,11 +13,9 @@ header {
   height: 150px;
   background: #111;
   color: white;
-
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-
   padding: 0 30px;
 }
 
@@ -30,11 +28,9 @@ header {
 .logo {
   width: 60px;
   height: 60px;
-  margin-right: 40px;
   margin-left: 40px;
   filter: invert(1);
 }
-
 
 .header-buttons {
   display: flex;
@@ -55,11 +51,10 @@ nav a {
 }
 
 nav a:hover {
-    transform: scale(1.2);
-    font-size: bold;
+  transform: scale(1.1);
 }
 
-/* ===== BUTTONS (ортақ стиль, өзгермейді) ===== */
+/* ===== BUTTONS (ортақ стиль) ===== */
 .buttons {
   display: flex;
   gap: 35px;
@@ -76,10 +71,9 @@ nav a:hover {
 }
 
 .btn:hover {
-    transform: scale(1.1);
-    background-color: red;
+  transform: scale(1.1);
+  background-color: red;
 }
-
 
 .btn.whatsapp {
   background: #25D366;
@@ -87,10 +81,9 @@ nav a:hover {
 }
 
 .btn.whatsapp:hover {
-    transform: scale(1.1);
-    background-color: red;
+  transform: scale(1.1);
+  background-color: red;
 }
-
 
 /* ===== ABOUT ===== */
 .about {
@@ -109,18 +102,16 @@ nav a:hover {
 
 /* ===== MAIN ===== */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
-  padding: 40px;
 }
 
 .card {
-  border: 1px solid #ddd;
-  text-align: center;
-  
+  flex: 1 1 250px;
+  max-width: 300px;
 }
-
 
 .card img {
   width: 100%;
@@ -128,11 +119,19 @@ nav a:hover {
   object-fit: cover;
 }
 
-/* Main астындағы buttons ортасына */
+/* Main астындағы батырмалар */
 .cards > .buttons {
-  grid-column: 1 / -1;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 30px;
+}
+
+.cards > .buttons a {
+  width: auto;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  font-size: 16px;
+  text-align: center;
 }
 
 /* ===== SERVICES ===== */
@@ -142,26 +141,31 @@ nav a:hover {
   padding: 40px;
   background: #eee;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .services img {
-  width: 600px;
-  height: 590px;
-  margin-left: 40px;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
   object-fit: cover;
 }
 
 .services ul {
   text-align: left;
-  padding-left: 100px;
+  padding-left: 0;
+  width: 100%;
+  max-width: 500px;
 }
 
 .services ul li {
-  font-size: 18px;      /* мәтіннің өлшемін үлкейту */
-  line-height: 1.7;     /* әр жолдың биіктігі, арасы ашылады */
-  margin-bottom: 10px;  /* әр элементтің астына қосымша қашықтық */
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 10px;
 }
 
+/* ===== MAP ===== */
 .map {
   margin-top: 40px;
 }
@@ -172,14 +176,11 @@ nav a:hover {
   border-radius: 12px;
 }
 
-
-
 /* ===== FOOTER ===== */
 footer {
   height: 120px;
   background: #111;
   color: white;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -190,24 +191,34 @@ footer p {
   margin: 0 0 10px;
 }
 
+footer .buttons {
+  justify-content: center;
+  margin-top: 10px;
+}
+
+footer .buttons a {
+  width: auto;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  font-size: 16px;
+  text-align: center;
+}
+
 /* ===== CHAT ===== */
 .chat {
   position: fixed;
   bottom: 20px;
   right: 20px;
-
   width: 60px;
   height: 60px;
   border-radius: 50%;
-
   background: #25D366;
   color: white;
   font-size: 26px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   cursor: pointer;
 }
 
@@ -215,7 +226,6 @@ footer p {
   position: absolute;
   bottom: 75px;
   right: 0;
-
   display: none;
   flex-direction: column;
   gap: 10px;
@@ -225,18 +235,16 @@ footer p {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-
   background: #25D366;
   color: white;
   font-size: 26px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-decoration: none;
 }
 
+/* WhatsApp сурет қосу үшін */
 .chat-menu img {
   width: 26px;
   height: 26px;
@@ -244,4 +252,54 @@ footer p {
 
 .chat-menu.show {
   display: flex;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 767px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: none;
+  }
+
+  .cards > .buttons a {
+    width: 80%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 15px;
+  }
+
+  .services {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .services img {
+    margin-bottom: 20px;
+  }
+
+  .services ul {
+    padding-left: 0;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .header-buttons {
+    margin: 10px 0;
+  }
+
+  footer .buttons a {
+    width: 80%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 15px;
+  }
 }
