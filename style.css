@@ -88,7 +88,7 @@ body {
 /* ===== CARDS ===== */
 
 .card {
-  background-color: #acab65;
+  background-color: #e4e4d7;
 }
 
 .card h3 {
@@ -103,7 +103,7 @@ body {
   flex-direction: column;
   gap: 20px;
   padding: 20px;
-  background-color: #7e3f3f;
+  background-color: #552222;
 }
 
 .card img {
