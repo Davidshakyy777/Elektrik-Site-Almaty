@@ -87,43 +87,21 @@ body {
 
 /* ===== CARDS ===== */
 
-.card {
-  background-color: #e4e4d7;
+/* ===== CARDS LAYOUT ===== */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:20px;
+  background-color:#552222;
 }
 
-.card h3 {
-  text-align: center;
-}
-.card p {
-  text-align: center;
-}
-
-.cards {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-  background-color: #552222;
-}
-
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-
-.main-buttons {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 30px;
-}
-
+/* SEO INTRO әрқашан ең үстінде толық қатар */
 .seo-intro{
+  grid-column:1 / -1;
   max-width:800px;
-  margin:0 auto 25px;
+  margin:0 auto 10px;
   text-align:center;
 }
 
@@ -133,9 +111,46 @@ body {
 }
 
 .seo-intro p{
-  color:#666;
+  color:#ddd;
   font-size:15px;
 }
+
+/* ===== CARD ===== */
+
+.card{
+  background-color:#e4e4d7;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.card h3{
+  text-align:center;
+  margin:10px 0 5px;
+}
+
+.card p{
+  text-align:center;
+  margin-bottom:12px;
+  font-weight:bold;
+}
+
+/* ===== BUTTONS ===== */
+
+.main-buttons{
+  grid-column:1 / -1;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:25px;
+}
+
 
 
 
