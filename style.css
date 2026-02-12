@@ -121,6 +121,23 @@ body {
   margin-top: 30px;
 }
 
+.seo-intro{
+  max-width:800px;
+  margin:0 auto 25px;
+  text-align:center;
+}
+
+.seo-intro h1{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.seo-intro p{
+  color:#666;
+  font-size:15px;
+}
+
+
 
 /* ===== SERVICES ===== */
 .services {
