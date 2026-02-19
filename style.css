@@ -370,7 +370,7 @@ body {
 .floating-next-btn {
   position: fixed;
   bottom: 230px; /* Чат батырмасы 150px-де тұр, бұл одан жоғары тұрады */
-  right: 20px;
+  left: 20px;
   background-color: #f1c40f; /* Сары түс */
   color: #000;
   padding: 12px 20px;
@@ -399,7 +399,7 @@ body {
     padding: 10px 15px;
     font-size: 12px;
     bottom: 220px;
-    right: 15px;
+    left: 15px;
   }
 }
 
